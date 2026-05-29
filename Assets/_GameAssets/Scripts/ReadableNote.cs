@@ -24,7 +24,11 @@ public class ReadableNote : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
+        bool interactInput = Input.GetKeyDown(KeyCode.E) ||
+                             Input.GetKeyDown(KeyCode.Return) ||
+                             Input.GetKeyDown(KeyCode.KeypadEnter);
+
+        if (isPlayerNear && interactInput)
         {
             if (isNoteOpen)
             {
